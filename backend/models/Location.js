@@ -5,6 +5,7 @@ const locationSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
+    unique: true,
     trim: true
   },
   address: {
@@ -12,7 +13,37 @@ const locationSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  // Add more fields as needed
+  latitude: {
+    type: Number,
+    required: true,
+  },
+  longitude: {
+    type: Number,
+    required: true,
+  },
+  contact: {
+    phone: String,
+    email: String,
+  },
+  operatingHours: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  availableCarTypes: [String],
+  parkingFacilities: {
+    type: String,
+    trim: true
+  },
+  additionalServices: {
+    type: String,
+    trim: true
+  },
+  reviews: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Review'
+  }],
+  photos: [String],
 }, { timestamps: true });
 
 // Create and export Location model
