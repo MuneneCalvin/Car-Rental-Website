@@ -2,7 +2,7 @@ const express = require('express');
 const { connectDB } = require('./db');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
-const authConfig = require('./config/auth0');
+const locationRoutes = require('./routes/locationRoutes'); // Import location routes
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,6 +16,7 @@ app.use(express.json());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/location', locationRoutes); 
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
