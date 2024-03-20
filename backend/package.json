@@ -1,5 +1,5 @@
 {
-  "name": "Car-Rental_System",
+  "name": "Car-Rental-System",
   "version": "1.0.0",
   "description": "REST API for a car rental system",
   "bin": "bin/createNodejsApp.js",
