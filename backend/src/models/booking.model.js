@@ -19,6 +19,17 @@ const bookingSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
+    method_of_payment: {
+        type: String,
+        enum: ["visa", "mpesa", "cash"],
+        required: true
+    },
+    payment: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Payment",
+        required: true
+    },
+
     status: {
         type: String,
         enum: ["pending", "approved", "rejected"],
