@@ -3,6 +3,7 @@ const userRouter = require("./users.route");
 const locationRouter = require("./location.route");
 const carsRouter = require("./cars.route");
 const bookingRouter = require("./booking.route");
+const paymentRouter = require("./payment.route");
 
 const router = express.Router();
 
@@ -11,6 +12,7 @@ const defaultRoutes = [
     { path: '/locations', route: locationRouter },
     { path: '/cars', route: carsRouter },
     { path: '/bookings', route: bookingRouter },
+    { path: '/payments', route: paymentRouter },
 ];
 
 defaultRoutes.forEach((route) => {
